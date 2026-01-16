@@ -19,7 +19,7 @@ use_case = GenerateTideMessageUseCase(
     ai_provider=open_ai
 )
 
-@router.get(
+@router.post(
     "",
     response_model=TideMessageResponse,
     summary="Get next tide change message",
@@ -29,7 +29,7 @@ use_case = GenerateTideMessageUseCase(
         "contextual message generated using artificial intelligence."
     ),
     responses={
-        200: {
+        201: {
             "description": "Next tide change with AI-generated message"
         },
         404: {
